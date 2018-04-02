@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4843920497384404}
   m_Layer: 0
-  m_Name: Rocket Ship ThinDark
+  m_Name: Rocket ThinDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

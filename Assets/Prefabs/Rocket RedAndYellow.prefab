@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4721608098083326}
   m_Layer: 0
-  m_Name: Rocket Ship RedAndYellow
+  m_Name: Rocket RedAndYellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
