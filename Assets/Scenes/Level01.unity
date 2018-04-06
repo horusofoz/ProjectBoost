@@ -211,11 +211,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 23969149835623034, guid: 3017d9713510ad3439792a954de9c6d9,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b44bbd6c004c32c488ddc411b9c59a0e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3017d9713510ad3439792a954de9c6d9, type: 2}
   m_IsPrefabParent: 0
@@ -342,11 +337,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114070144193743646, guid: 2562d3e632e663944b532714e547c213,
-        type: 2}
-      propertyPath: rcsThrust
-      value: 200
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2562d3e632e663944b532714e547c213, type: 2}
   m_IsPrefabParent: 0
@@ -405,7 +395,7 @@ GameObject:
   - component: {fileID: 2109474761}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Fuel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
