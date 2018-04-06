@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 65749633591917082}
   - component: {fileID: 136270511240226082}
   - component: {fileID: 82192753749867086}
-  - component: {fileID: 114196959479389584}
+  - component: {fileID: 114070144193743646}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -771,13 +771,13 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1861981040330754}
   serializedVersion: 2
-  m_Mass: 0.125
-  m_Drag: 0
+  m_Mass: 1
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!65 &65749633591917082
 BoxCollider:
@@ -858,7 +858,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -871,7 +871,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114196959479389584
+--- !u!114 &114070144193743646
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -882,6 +882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81114c8b0cce9dd4d87f764fbb4c01fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rcsThrust: 200
+  mainThrust: 1000
 --- !u!136 &136270511240226082
 CapsuleCollider:
   m_ObjectHideFlags: 1
