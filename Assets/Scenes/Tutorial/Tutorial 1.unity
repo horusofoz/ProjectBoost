@@ -820,6 +820,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114070144193743646, guid: 2562d3e632e663944b532714e547c213,
+        type: 2}
+      propertyPath: levelComplete
+      value: 
+      objectReference: {fileID: 8300000, guid: 38f82701c8198ea488c8da26bfca37f0, type: 3}
+    - target: {fileID: 114070144193743646, guid: 2562d3e632e663944b532714e547c213,
+        type: 2}
+      propertyPath: deathExplosion
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d1ddddc5a1023748a8ac5770bd6b22d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2562d3e632e663944b532714e547c213, type: 2}
   m_IsPrefabParent: 0
