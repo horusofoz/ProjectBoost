@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour {
 
     Rigidbody rigidBody;
     AudioSource myAudioSource;
-    bool isThrusting;
     [SerializeField] float rcsThrust = 200f;
     [SerializeField] float mainThrust = 1000f;
 
@@ -31,11 +28,13 @@ public class Rocket : MonoBehaviour {
             case "Friendly":
                 Debug.Log("Friendly"); // TODO TBD
                 break;
-            case "Fuel":
-                Debug.Log("Fuel"); // TODO Rocket refueled
+            case "Finish":
+                Debug.Log("Hit Finish"); // TODO 
+                SceneManager.LoadScene(1);
                 break;
             default:
                 Debug.Log("Dead"); // TODO Rocket dies
+                SceneManager.LoadScene(0);
                 break;
         }
     }
