@@ -3,10 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour {
 
+    
+
     Rigidbody rigidBody;
     AudioSource myAudioSource;
     [SerializeField] float rcsThrust = 200f;
     [SerializeField] float mainThrust = 1000f;
+
+    enum State { Alive, Dying, NextLevel };
+    State state = State.Alive;
 
     // Use this for initialization
     void Start () {
@@ -17,26 +22,45 @@ public class Rocket : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Thrust();
-        Rotate();
+         // TODO stop sound on death
+        if (state == State.Alive)
+        {
+            Thrust();
+            Rotate();
+        }
 	}
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (state != State.Alive) { return; } // Ignore collision
+
         switch (collision.gameObject.tag)
         {
             case "Friendly":
                 Debug.Log("Friendly"); // TODO TBD
                 break;
             case "Finish":
-                Debug.Log("Hit Finish"); // TODO 
-                SceneManager.LoadScene(1);
+                state = State.NextLevel;
+                Invoke("LoadNextScene", 1f); // Paramterise time
                 break;
             default:
-                Debug.Log("Dead"); // TODO Rocket dies
-                SceneManager.LoadScene(0);
+                state = State.Dying;
+                Invoke("LoadFirstScene", 1f); // Paramterise time
                 break;
         }
+    }
+
+    private void LoadNextScene()
+    {
+        if (SceneManager.GetActiveScene().buildIndex < 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Allow for more than 2 levels
+        }
+    }
+
+    private void LoadFirstScene()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void Thrust()
