@@ -61,7 +61,7 @@ public class Rocket : MonoBehaviour
         myAudioSource.Stop();
         myAudioSource.PlayOneShot(levelComplete);
         successParticles.Play();
-        Invoke("LoadSameScene", levelLoadDelay); // Paramterise time
+        Invoke("LoadNextScene", levelLoadDelay); // Paramterise time
     }
 
     private void StartDeathSequence()
@@ -70,7 +70,7 @@ public class Rocket : MonoBehaviour
         myAudioSource.Stop();
         myAudioSource.PlayOneShot(deathExplosion);
         deathParticles.Play();
-        Invoke("LoadFirstScene", levelLoadDelay); // Paramterise time
+        Invoke("LoadSameScene", levelLoadDelay); // Paramterise time
     }
 
     private void LoadNextScene()
