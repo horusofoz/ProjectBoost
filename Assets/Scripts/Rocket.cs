@@ -61,7 +61,7 @@ public class Rocket : MonoBehaviour
         myAudioSource.Stop();
         myAudioSource.PlayOneShot(levelComplete);
         successParticles.Play();
-        Invoke("LoadNextScene", levelLoadDelay); // Paramterise time
+        Invoke("LoadSameScene", levelLoadDelay); // Paramterise time
     }
 
     private void StartDeathSequence()
@@ -81,9 +81,9 @@ public class Rocket : MonoBehaviour
         }
     }
 
-    private void LoadFirstScene()
+    private void LoadSameScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void RespondToThrustInput()
