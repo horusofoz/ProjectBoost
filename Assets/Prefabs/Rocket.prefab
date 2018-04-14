@@ -433,7 +433,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1861981040330754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30, y: 3.5, z: 2}
+  m_LocalPosition: {x: -34.5, y: 3.5, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4961205025632498}
@@ -1004,8 +1004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81114c8b0cce9dd4d87f764fbb4c01fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rcsThrust: 200
-  mainThrust: 1000
+  rcsThrust: 300
+  mainThrust: 1500
+  levelLoadDelay: 2
   mainEngine: {fileID: 8300000, guid: bc7b180c35546c64fbde5bc847aba306, type: 3}
   levelComplete: {fileID: 8300000, guid: 38f82701c8198ea488c8da26bfca37f0, type: 3}
   deathExplosion: {fileID: 8300000, guid: 9d1ddddc5a1023748a8ac5770bd6b22d, type: 3}
@@ -1085,7 +1086,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -13623967
+  randomSeed: 2135170733
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7807,7 +7808,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1614875006
+  randomSeed: 335396745
   InitialModule:
     serializedVersion: 3
     enabled: 1
