@@ -116,34 +116,14 @@ public class Rocket : MonoBehaviour
 
     private void RespondToThrustInput()
     {
-        if (Input.GetKey(KeyCode.Space)) // Can thrust while rotating
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow)) // Can thrust while rotating
         {
             ApplyThrust();
         }
         else
         {
-            myAudioSource.Stop();
-            mainEngineParticles.Stop();
+            StopApplyingThrust();
         }
-    }
-
-    private void RespondToRotateInput()
-    {
-
-        rigidBody.freezeRotation = true; // take manual control of rotation
-        
-        float rotationThisFrame = rcsThrust * Time.deltaTime;
-
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(Vector3.forward * rotationThisFrame);
-        }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(-Vector3.forward * rotationThisFrame);
-        }
-
-        rigidBody.freezeRotation = false; // Resume physics control of rotation
     }
 
     private void ApplyThrust()
@@ -159,4 +139,29 @@ public class Rocket : MonoBehaviour
             mainEngineParticles.Play();
         }
     }
+
+    private void StopApplyingThrust()
+    {
+        myAudioSource.Stop();
+        mainEngineParticles.Stop();
+    }
+
+    private void RespondToRotateInput()
+    {
+
+        rigidBody.angularVelocity = Vector3.zero; // Remove rotation due to physics
+        
+        float rotationThisFrame = rcsThrust * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(Vector3.forward * rotationThisFrame);
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(-Vector3.forward * rotationThisFrame);
+        }
+    }
+
+    
 }
