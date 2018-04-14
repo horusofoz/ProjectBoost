@@ -19,6 +19,8 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem deathParticles;
 
+    int WinSceneNumber;
+
     enum State { Alive, Dying, NextLevel };
     State state = State.Alive;
 
@@ -27,7 +29,8 @@ public class Rocket : MonoBehaviour
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
-        myAudioSource = GetComponent<AudioSource>();   
+        myAudioSource = GetComponent<AudioSource>();
+        WinSceneNumber = SceneManager.sceneCountInBuildSettings - 1;
 	}
 	
 	// Update is called once per frame
@@ -66,7 +69,6 @@ public class Rocket : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("Friendly"); // TODO TBD
                 break;
             case "Finish":
                 StartSuccessSequence();
@@ -97,9 +99,9 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextScene()
     {
-        if (SceneManager.GetActiveScene().buildIndex < 5)
+        if (SceneManager.GetActiveScene().buildIndex < WinSceneNumber) // If not win scene
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Allow for more than 2 levels
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else
         {
